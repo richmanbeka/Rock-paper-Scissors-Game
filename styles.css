@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #242c34;
+    font-family: 'Asap', sans-serif;
+}
+
+header { background-color: white; padding: 20px; }
+header h1 { color: #24272E; text-align: center; }
+
+.player-name-container {
+    text-align: center; 
+    margin-top: 15px; 
+}
+.player-name-container input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.round-selector {
+    text-align: center;
+    margin-top: 20px;
+}
+.round-selector label {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+}
+.round-btn {
+    background: #e25840;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.round-btn:hover { background: white; color: #242c34; transform: scale(1.05); }
+
+.score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    text-align: center;
+    width: 200px;
+    color: white;
+    font-size: 46px;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.badge {
+    background: #e25840;
+    color: white;
+    font-size: 14px;
+    padding: 2px 10px;
+}
+
+#user-label { position: absolute; top: 30px; left: -25px; }
+#computer-label { position: absolute; top: 30px; right: -30px; }
+
+.result {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    min-height: 50px;
+    margin-top: 10px;
+}
+
+#action-message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFC107;
+    margin-top: 15px;
+}
+
+.choices {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.choice {
+    border: 4px solid white;
+    border-radius: 50%;
+    margin: 0 20px;
+    padding: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.choice:hover { 
+    cursor: pointer;
+    background: #24272E;
+    transform: scale(1.05);
+}
+
+.win-glow { border-color: #4CAF50; box-shadow: 0 0 25px #4CAF50; animation: bounce 0.3s ease; }
+.lose-glow { border-color: #e25840; box-shadow: 0 0 25px #e25840; animation: shake 0.3s ease; }
+.draw-glow { border-color: #FFC107; box-shadow: 0 0 25px #FFC107; animation: blink 0.3s ease; }
+
+@keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+@keyframes shake { 0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);} }
+@keyframes blink { 0%,100%{opacity:1;}50%{opacity:0.5;} }
+
+.restart-container { text-align: center; margin-top: 30px; }
+#restart-btn {
+    display: none; 
+    background: #e25840; 
+    color: white; 
+    padding: 12px 30px;
+    font-size: 18px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 8px;
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+#restart-btn:hover { background: white; color: #242c34; transform: scale(1.05); }
+#restart-btn:active { transform: scale(0.97); }
+
+#start-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#start-btn:hover { background: white; color: #4CAF50; transform: scale(1.05); }
+#start-btn:active { transform: scale(0.97); }
+
+
+#leaderboard { margin-top: 30px; text-align: center; color: white; font-size: 18px; }
+
+@media (max-width: 600px) {
+    .choices { display: flex; flex-direction: column; align-items: center; margin-top: 30px; }
+    .choice { margin: 10px 0; }
+    header h1 { font-size: 24px; }
+    .result { font-size: 24px; margin-top: 15px; }
+    #action-message { font-size: 18px; }
+    .score-board { font-size: 36px; width: 180px; }
+}
